@@ -14,7 +14,12 @@ public class ImprimirMaior {
         System.out.println("Insira o segundo número");
         valor2 = input.nextFloat();
         System.out.println("Processando informações");
-
+        if(valor1 > valor2){
+            System.out.println( valor1 +"é o maior numero");
+        }else if(valor1 < valor2){
+            System.out.println(valor2 +"é o maior");
+        } else if (valor1 == valor2){
+            System.out.println("Os números são iguais");
         }
     }
 }
