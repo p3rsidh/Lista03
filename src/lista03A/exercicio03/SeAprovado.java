@@ -6,6 +6,7 @@ public class SeAprovado {
     public static void main(String[] args) {
         float nota1, nota2, media;
         String nome;
+        boolean validade;
         Scanner input = new Scanner(System.in);
 
         System.out.println("Este programa receberá duas notas de um aluno, calculará a media e informará se o aluno foi aprovado");
@@ -16,20 +17,29 @@ public class SeAprovado {
         System.out.println("Introduza a segunda nota, entre 0 e 10");
         nota2 = input.nextFloat();
         System.out.println("Processando");
+        validade = false;
 
-
-        if(nota1 > 10 || nota2 > 10 || nota1 < 0 || nota2 < 0){
-            System.out.println("Introduza valores válidos, entre 0 e 10");
-        }else {
-            media = (nota1 + nota2)/2;
-        if (media >= 7){
-            if (media == 10){
-                System.out.println("Aluno " +nome +" aprovado com Distinção!! Com média 10");
-            }else {
-                System.out.println("Aluno " +nome + " aprovado com média de " + media);
+        while (validade == false) {
+            if (nota1 > 10 || nota2 > 10 || nota1 < 0 || nota2 < 0) {
+                System.out.println("Introduza valores válidos, entre 0 e 10");
+                System.out.println("Introduza a nota 1");
+                nota1 = input.nextFloat();
+                System.out.println("Introduza a nota 2");
+                nota2 = input.nextFloat();
+                validade = false;
+            } else {
+                validade = true;
+                media = (nota1 + nota2) / 2;
+                if (media >= 7) {
+                    if (media == 10) {
+                        System.out.println("Aluno " + nome + " aprovado com Distinção!! Com média 10");
+                    } else {
+                        System.out.println("Aluno " + nome + " aprovado com média de " + media);
+                    }
+                } else if (media < 7) {
+                    System.out.println("Aluno " + nome + " reprovado com media de " + media);
+                }
             }
-        }else if( media < 7){
-            System.out.println("Aluno " +nome +" reprovado com media de " +media);
-        }}
+        }
     }
 }
