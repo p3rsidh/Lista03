@@ -30,6 +30,7 @@ public class somaPositivos {
                     soma = soma + lista.get(i);
                 }
                 System.out.println("A soma é : " +soma);
+                repetir = true;
             }
         }
     }
