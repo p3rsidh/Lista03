@@ -1,4 +1,4 @@
-# Lista03A
+# Lista03
 
 LISTA DE EXERCÍCIOS 003A - Entregar
 
